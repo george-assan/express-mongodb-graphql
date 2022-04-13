@@ -2,7 +2,7 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type Footfall {
-    _id: ID
+    id: ID
     Prop_0: String
     Prop_1: String
     Prop_2: String
@@ -14,6 +14,6 @@ export const typeDefs = gql`
 
   type Query {
     getFootfallRecords: [Footfall]
-    findFootfallRecord(_id: String): Footfall
+    findFootfallRecord(id: String): Footfall
   }
 `;

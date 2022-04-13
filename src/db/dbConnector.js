@@ -16,10 +16,10 @@ let db = mongoose.connection;
 db.on('error', () => {
     console.error("Error while connecting to DB");
 });
-
-const Footfall = mongoose.model('Footfall', footfallSchema,'footfall');
-Footfall.findOne().where({ Prop_1: '30427' }).exec((err, record) => {
-    console.log(record)
+db.once('open', function callback () {
+    console.log('Conntected To Mongo Database');
 });
+
+const Footfall = mongoose.model('Footfall', footfallSchema, 'footfall');
 
 export { Footfall };
